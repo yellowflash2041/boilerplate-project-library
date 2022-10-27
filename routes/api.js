@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 
 module.exports = function (app) {
 
-  mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true });
+  mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 
   const Book = mongoose.model('Book', new mongoose.Schema({
     title: { type: String, require: true },
